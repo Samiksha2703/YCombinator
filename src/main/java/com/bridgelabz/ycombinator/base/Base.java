@@ -10,6 +10,7 @@ package com.bridgelabz.ycombinator.base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -23,17 +24,18 @@ public class Base {
 
     //method to launch browser
     @BeforeTest
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         webdriver = new ChromeDriver();
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        try{
+        try {
             URL url = new URL("https://news.ycombinator.com/newest");
             URLConnection connection = url.openConnection();
             connection.connect();
             System.out.println("Internet is connected");
             // launch application
+
             webdriver.get("https://news.ycombinator.com/newest");
             Thread.sleep(1000);
         } catch (IOException | InterruptedException e) {

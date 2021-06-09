@@ -6,6 +6,8 @@
 
 package com.bridgelabz.ycombinator.utility;
 
+import java.sql.Array;
+
 public class Utility {
 
     //method to get integer string from string
@@ -25,5 +27,11 @@ public class Utility {
     //method to convert string into integer value
     public static int getIntValue(String str) {
         return Integer.parseInt(str);
+    }
+
+    //method to convert string into string array
+    public static String[] getArrayOfString(String str){
+        String strArray[] = str.split(" ");
+        return strArray;
     }
 }
