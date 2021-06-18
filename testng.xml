@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/kalam/IdeaProjects/YCombinatorAutomation/src/test/java/com/bridgelabz/ycombinator/test/YCombinatorTest.java">
+        <classes>
+            <class name="com.bridgelabz.ycombinator.test.YCombinatorTest">
+                <methods>
+                    <include name="print_Title_With_Points"/>
+                    <include name="whenGivenListOfNews_ShouldPrint_WordWhichOccursMaximumTime"/>
+                    <include name="whenGivenListOfNews_WithMaximumOccurredWord_ShouldPrint_NewsWithMaximumPoints"/>
+                    <include name="whenGivenListOfNews_ShouldPrintNewsHeadline_WithMaximumPoints"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.bridgelabz.ycombinator.utility.TestNgListener"></listener>
+    </listeners>
+</suite>

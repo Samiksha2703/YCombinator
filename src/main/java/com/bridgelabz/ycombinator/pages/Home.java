@@ -13,7 +13,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Home {
     public static LinkedList<String> headlines = new LinkedList<>();
@@ -35,29 +34,36 @@ public class Home {
     }
 
     //method to get news and print it on console
-    public void printTitleWithPoints() {
-        int newsCount = 30;
-        while (newsCount <= 120) {
-            Iterator<WebElement> titleItr = newsTitle.iterator();
-            while (titleItr.hasNext()) {
-                String text = titleItr.next().getText();
-                headlines.add(text);
+    public Boolean printTitleWithPoints() {
+        try {
+            int newsCount = 30;
+            while (newsCount <= 120) {
+                Iterator<WebElement> titleItr = newsTitle.iterator();
+                while (titleItr.hasNext()) {
+                    String text = titleItr.next().getText();
+                    headlines.add(text);
+                }
+                Iterator<WebElement> pointsItr = newsPoints.iterator();
+                while (pointsItr.hasNext()) {
+                    String text = pointsItr.next().getText();
+                    String str = Utility.getIntString(text);
+                    int intValue = Utility.getIntValue(str);
+                    points.add(intValue);
+                }
+                moreButton.click();
+                newsCount += 30;
             }
-            Iterator<WebElement> pointsItr = newsPoints.iterator();
-            while (pointsItr.hasNext()) {
-                String text = pointsItr.next().getText();
-                String str = Utility.getIntString(text);
-                int intValue = Utility.getIntValue(str);
-                points.add(intValue);
+            for (int i = 0; i < points.size(); i++) {
+                TitlePointHashMap.put(headlines.get(i), points.get(i));
             }
-            moreButton.click();
-            newsCount += 30;
+            int count = 1;
+            for (Map.Entry<String, Integer> entry : TitlePointHashMap.entrySet())
+                System.out.println("Headline : " + count++ + " " + entry.getKey() + "  Points : " + entry.getValue());
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-        for (int i = 0; i < headlines.size(); i++) {
-            TitlePointHashMap.put(headlines.get(i), points.get(i));
-        }
-//        for (Map.Entry<String, Integer> entry: TitlePointHashMap.entrySet())
-//            System.out.println("Headline : "+entry.getKey()+"  Points : "+entry.getValue());
     }
 
     //get list of news with maximum occured word in it
@@ -73,20 +79,26 @@ public class Home {
     }
 
     //method to print news with maximum point with maximum occurred word in it
-    public void printNewsWithMaximumPoints() {
-        int checkMaximum = 0;
-        int maxIndex = 0;
-        LinkedList<Integer> intList = new LinkedList<>();
-        for (int i = 0; i < sortHeadlines.size(); i++) {
-            intList.add(TitlePointHashMap.get(sortHeadlines.get(i)));
-            for (int j = 0; j < intList.size(); j++) {
-                if (intList.get(j) > checkMaximum) {
-                    maxIndex = j;
-                    checkMaximum = intList.get(j);
+    public Boolean printNewsWithMaximumPoints() {
+        try {
+            int checkMaximum = 0;
+            int maxIndex = 0;
+            LinkedList<Integer> intList = new LinkedList<>();
+            for (int i = 0; i < sortHeadlines.size(); i++) {
+                intList.add(TitlePointHashMap.get(sortHeadlines.get(i)));
+                for (int j = 0; j < intList.size(); j++) {
+                    if (intList.get(j) > checkMaximum) {
+                        maxIndex = j;
+                        checkMaximum = intList.get(j);
+                    }
                 }
             }
+            System.out.println("\nNews with maximum points with maximum occurrence word in it : \n" + sortHeadlines.get(maxIndex));
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-        System.out.println("\nNews with maximum points with maximum occurrence word in it : \n" + sortHeadlines.get(maxIndex));
     }
 
     //method to print the word that occurs maximum time
@@ -121,17 +133,23 @@ public class Home {
     }
 
     //method to print news headline with maximum points
-    public void printNewsHeadlineWithMaximumPoint() {
-        Integer[] intArray = TitlePointHashMap.values().toArray(new Integer[0]);
-        //sorting array
-        Arrays.sort(intArray);
-        //get the maximum value
-        int max = intArray[intArray.length - 1];
-        //to extract the key for value given
-        for (Map.Entry<String, Integer> entry : TitlePointHashMap.entrySet()) {
-            if (entry.getValue().equals(max)) {
-                System.out.println("\nNews headline with maximum points : " + entry.getKey() + "\nAnd points are : " + entry.getValue());
+    public Boolean printNewsHeadlineWithMaximumPoint() {
+        try {
+            Integer[] intArray = TitlePointHashMap.values().toArray(new Integer[0]);
+            //sorting array
+            Arrays.sort(intArray);
+            //get the maximum value
+            int max = intArray[intArray.length - 1];
+            //to extract the key for value given
+            for (Map.Entry<String, Integer> entry : TitlePointHashMap.entrySet()) {
+                if (entry.getValue().equals(max)) {
+                    System.out.println("\nNews headline with maximum points : " + entry.getKey() + "\nAnd points are : " + entry.getValue());
+                }
             }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="25462" started-at="2021-06-18T09:11:54 IST" finished-at="2021-06-18T09:12:20 IST">
+    <groups>
+    </groups>
+    <test name="C:/Users/kalam/IdeaProjects/YCombinatorAutomation/src/test/java/com/bridgelabz/ycombinator/test/YCombinatorTest.java" duration-ms="25462" started-at="2021-06-18T09:11:54 IST" finished-at="2021-06-18T09:12:20 IST">
+      <class name="com.bridgelabz.ycombinator.test.YCombinatorTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="setUp" is-config="true" duration-ms="10460" started-at="2021-06-18T09:11:54 IST" finished-at="2021-06-18T09:12:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="startTest" is-config="true" duration-ms="539" started-at="2021-06-18T09:12:05 IST" finished-at="2021-06-18T09:12:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="print_Title_With_Points()[pri:1, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="print_Title_With_Points" duration-ms="9708" started-at="2021-06-18T09:12:05 IST" finished-at="2021-06-18T09:12:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print_Title_With_Points -->
+        <test-method status="PASS" signature="whenGivenListOfNews_ShouldPrint_WordWhichOccursMaximumTime()[pri:2, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="whenGivenListOfNews_ShouldPrint_WordWhichOccursMaximumTime" duration-ms="314" started-at="2021-06-18T09:12:16 IST" finished-at="2021-06-18T09:12:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenGivenListOfNews_ShouldPrint_WordWhichOccursMaximumTime -->
+        <test-method status="PASS" signature="whenGivenListOfNews_WithMaximumOccurredWord_ShouldPrint_NewsWithMaximumPoints()[pri:3, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="whenGivenListOfNews_WithMaximumOccurredWord_ShouldPrint_NewsWithMaximumPoints" duration-ms="329" started-at="2021-06-18T09:12:17 IST" finished-at="2021-06-18T09:12:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenGivenListOfNews_WithMaximumOccurredWord_ShouldPrint_NewsWithMaximumPoints -->
+        <test-method status="PASS" signature="whenGivenListOfNews_ShouldPrintNewsHeadline_WithMaximumPoints()[pri:4, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="whenGivenListOfNews_ShouldPrintNewsHeadline_WithMaximumPoints" duration-ms="291" started-at="2021-06-18T09:12:18 IST" finished-at="2021-06-18T09:12:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenGivenListOfNews_ShouldPrintNewsHeadline_WithMaximumPoints -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="endTest" is-config="true" duration-ms="935" started-at="2021-06-18T09:12:19 IST" finished-at="2021-06-18T09:12:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.bridgelabz.ycombinator.test.YCombinatorTest@702ed190]" name="tearDown" is-config="true" duration-ms="160" started-at="2021-06-18T09:12:20 IST" finished-at="2021-06-18T09:12:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bridgelabz.ycombinator.test.YCombinatorTest -->
+    </test> <!-- C:/Users/kalam/IdeaProjects/YCombinatorAutomation/src/test/java/com/bridgelabz/ycombinator/test/YCombinatorTest.java -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

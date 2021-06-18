@@ -6,9 +6,17 @@
 
 package com.bridgelabz.ycombinator.utility;
 
-import java.sql.Array;
+import com.bridgelabz.ycombinator.base.Base;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-public class Utility {
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class Utility extends Base {
 
     //method to get integer string from string
     public static String getIntString(String str) {
@@ -30,8 +38,26 @@ public class Utility {
     }
 
     //method to convert string into string array
-    public static String[] getArrayOfString(String str){
+    public static String[] getArrayOfString(String str) {
         String strArray[] = str.split(" ");
         return strArray;
+    }
+
+    //method to check internet connection
+    public static void checkConnection() throws IOException {
+        URL url = new URL("https://tpcindia.com/");
+        URLConnection connection = url.openConnection();
+        connection.connect();
+        System.out.println("Internet is connected");
+    }
+
+    //Method to take a screenshot
+    public static String screenshot(String fileName) throws IOException {
+        File file = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
+        File dest = new File("C:\\Users\\kalam\\IdeaProjects\\YCombinatorAutomation\\src\\main\\resources\\Screenshot/" + fileName + System.currentTimeMillis() + ".jpg");
+        String filePath = dest.getAbsolutePath();
+        FileUtils.copyFile(file, dest);
+        System.out.println("Screenshot Taken for " + fileName);
+        return filePath;
     }
 }
